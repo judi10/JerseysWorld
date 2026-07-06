@@ -1,0 +1,81 @@
+/* src/index.css
+   Reinitialisation globale + variables du theme "Nuit de match".
+   Regle de contraste : texte fonce (--texte-sur-vif) sur tout element
+   de couleur vive (vert ou jaune), jamais de blanc sur ces fonds. */
+
+:root {
+  /* Palette */
+  --fond: #111814;
+  --surface: #1b2b22;
+  --surface-claire: #223328;
+  --accent-vert: #3ecf6b;
+  --accent-jaune: #f2c230;
+  --blanc-craie: #f4f7f2;
+  --texte-sur-vif: #111814;
+  --texte-attenue: #a9b6ae;
+  --rouge-alerte: #e5484d;
+  --bordure: rgba(244, 247, 242, 0.1);
+
+  /* Typographie */
+  --police-titres: "Oswald", "Arial Narrow", sans-serif;
+  --police-corps: "Inter", "Segoe UI", sans-serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fond);
+  color: var(--blanc-craie);
+  font-family: var(--police-corps);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--police-titres);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Focus visible clavier — accessibilite */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent-jaune);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
