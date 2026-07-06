@@ -388,12 +388,6 @@
   text-transform: none;
 }
 
-.carte-description {
-  color: var(--texte-attenue);
-  font-size: 0.85rem;
-  margin: 0;
-}
-
 .carte-prix {
   display: flex;
   align-items: baseline;
@@ -802,6 +796,16 @@
   }
 }
 
+/* ─── RESPONSIVE ──── */
+
+@media (max-width: 900px) and (min-width: 481px) {
+  .grille-produits {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+    justify-content: center;
+  }
+}
+
+/* Mobile : 1 colonne */
 @media (max-width: 480px) {
   .grille-produits {
     grid-template-columns: repeat(auto-fit, minmax(160px, 200px));

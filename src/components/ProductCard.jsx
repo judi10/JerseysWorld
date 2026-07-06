@@ -81,7 +81,6 @@ export default function ProductCard({ produit, onAjouterAuPanier, taillesFiltree
         )}
 
         <h4>{produit.nom}</h4>
-        <p className="carte-description">{produit.description}</p>
 
         <div className="carte-prix">
           <span className="prix-actuel">{produit.prix.toFixed(2)} $</span>
