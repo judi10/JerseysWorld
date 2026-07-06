@@ -96,7 +96,7 @@
 
 .banniere-promo {
   background: linear-gradient(160deg, var(--surface) 0%, var(--fond) 100%);
-  padding: 3rem 1.5rem 2.5rem;
+  padding: 2rem 1.5rem 2rem;
   text-align: center;
 }
 
@@ -110,13 +110,13 @@
   letter-spacing: 0.08em;
   padding: 0.3rem 0.9rem;
   border-radius: 999px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .banniere-promo h1 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
   max-width: 700px;
-  margin: 0 auto 0.75rem;
+  margin: 0 auto 0.6rem;
 }
 
 .banniere-texte {
@@ -126,7 +126,7 @@
 }
 
 .bouton-hero {
-  margin: 1.75rem auto 0;
+  margin: 1.1rem auto 0;
   align-self: center;
 }
 
@@ -134,7 +134,7 @@
 
 .section-accueil {
   width: 100%;
-  padding: 3rem clamp(1.5rem, 4vw, 3.5rem) 4rem;
+  padding: 2rem clamp(1.5rem, 4vw, 3.5rem) 4rem;
 }
 
 .section-accueil-entete {
@@ -241,6 +241,14 @@
   font-size: 0.92rem;
 }
 
+.liste-facette input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  accent-color: var(--accent-vert);
+  cursor: pointer;
+}
+
 .pastille-continent {
   display: inline-block;
   width: 10px;
@@ -291,7 +299,8 @@
 
 .grille-produits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;
   gap: 1.75rem;
 }
 
@@ -795,7 +804,8 @@
 
 @media (max-width: 480px) {
   .grille-produits {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
+    justify-content: center;
     gap: 1rem;
   }
 

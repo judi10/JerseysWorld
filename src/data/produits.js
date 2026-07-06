@@ -57,7 +57,7 @@ export const PRODUITS = [
     couleurPrimaire: "#D80621",
     couleurSecondaire: "#FFFFFF",
     prix: 76.49,
-    prixOriginal: 89.99, // -15%
+    prixOriginal: null, // -15%
     nouveau: false,
     description: "Maillot de l'equipe canadienne, coupe classique.",
   },
@@ -111,7 +111,7 @@ export const PRODUITS = [
     couleurPrimaire: "#5DADE2",
     couleurSecondaire: "#FFFFFF",
     prix: 71.99,
-    prixOriginal: 79.99,
+    prixOriginal: null,
     nouveau: false,
     description: "Maillot de la Celeste, bleu ciel signature.",
   },
