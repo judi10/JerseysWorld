@@ -1,0 +1,18 @@
+node_modules
+README.md
+dist
+dist-ssr
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Dis-moi si tu le retrouves cache une fois affiché, ou si tu dois le recréer manuellement.Maroc rouge vert
+
+
+
