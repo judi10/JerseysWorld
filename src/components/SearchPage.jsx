@@ -8,18 +8,17 @@ import { CONFIG_FACETTES } from "../data/facettes";
 
 export default function SearchPage({ produits, filtres, onToggle, onRange, onEffacerTout, onAjouterAuPanier }) {
   const filtresActifs =
-    filtres.continent.length > 0 || filtres.taille.length > 0 || filtres.prix < 100;
+    filtres.promotion.length > 0 ||
+    filtres.continent.length > 0 ||
+    filtres.taille.length > 0 ||
+    filtres.prix < 100;
 
   return (
     <>
-      <section className="banniere-promo">
-        <p className="banniere-etiquette">Offres du moment</p>
-        <h1>Portez les couleurs de votre nation !</h1>
-        <p className="banniere-texte">
-          Jusqu'a -25% sur une selection de maillots. Livraison partout dans le monde,
-          flocage personnalise disponible sur chaque maillot.
-        </p>
-      </section>
+      <div className="entete-page-catalogue">
+        <h1>Catalogue complet</h1>
+        <p>Filtrez par continent, taille ou budget pour trouver votre maillot.</p>
+      </div>
 
       <div className="mise-en-page-boutique">
         <FacetPanel

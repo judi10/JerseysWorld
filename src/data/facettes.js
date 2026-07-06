@@ -12,6 +12,12 @@ import { CONTINENTS } from "./continents";
 
 export const CONFIG_FACETTES = [
   {
+    id: "promotion",
+    label: "Promotions",
+    type: "checkbox",
+    options: ["Solde"],
+  },
+  {
     id: "continent",
     label: "Continent",
     type: "checkbox",

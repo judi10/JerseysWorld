@@ -5,11 +5,17 @@ export default function Header({ pageActuelle, onNaviguer, nombreArticlesPanier 
   return (
     <header className="entete">
       <div className="entete-contenu">
-        <button className="logo" onClick={() => onNaviguer("boutique")}>
+        <button className="logo" onClick={() => onNaviguer("accueil")}>
           Jerseys<span>World</span>
         </button>
 
         <nav className="nav-principale">
+          <button
+            className={pageActuelle === "accueil" ? "lien-nav actif" : "lien-nav"}
+            onClick={() => onNaviguer("accueil")}
+          >
+            Accueil
+          </button>
           <button
             className={pageActuelle === "boutique" ? "lien-nav actif" : "lien-nav"}
             onClick={() => onNaviguer("boutique")}
@@ -25,7 +31,7 @@ export default function Header({ pageActuelle, onNaviguer, nombreArticlesPanier 
         </nav>
 
         <button className="bouton-panier" onClick={() => onNaviguer("commande")}>
-          🛒 Sélection
+          🛒 Panier
           <span className="badge-panier">{nombreArticlesPanier}</span>
         </button>
       </div>

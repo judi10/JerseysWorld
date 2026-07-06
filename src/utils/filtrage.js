@@ -5,6 +5,11 @@
 
 export function filtrerProduits(produits, filtres) {
   return produits.filter((produit) => {
+    // 0. Facette "promotion" (maillots en solde uniquement)
+    if (filtres.promotion.length > 0 && produit.prixOriginal === null) {
+      return false;
+    }
+
     // 1. Facette "continent" (valeur simple par produit)
     if (
       filtres.continent.length > 0 &&

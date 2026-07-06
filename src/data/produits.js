@@ -9,6 +9,7 @@ export const PRODUITS = [
   // ─── AFRIQUE ───────────────────────────────────────────────
   {
     id: 1,
+    image: "cameroun.png",
     nom: "Maillot Cameroun",
     continent: "afrique",
     taille: ["S", "M", "L", "XL", "XXL"],
@@ -21,6 +22,7 @@ export const PRODUITS = [
   },
   {
     id: 2,
+    image: "maroc.png",
     nom: "Maillot Maroc",
     continent: "afrique",
     taille: ["S", "M", "L", "XL"],
@@ -33,6 +35,7 @@ export const PRODUITS = [
   },
   {
     id: 3,
+    image: "senegal.png",
     nom: "Maillot Senegal",
     continent: "afrique",
     taille: ["XS", "S", "M", "L", "XL"],
@@ -47,6 +50,7 @@ export const PRODUITS = [
   // ─── AMERIQUE DU NORD ──────────────────────────────────────
   {
     id: 4,
+    image: "canada.png",
     nom: "Maillot Canada",
     continent: "amerique-nord",
     taille: ["S", "M", "L", "XL", "XXL"],
@@ -59,6 +63,7 @@ export const PRODUITS = [
   },
   {
     id: 5,
+    image: "mexique.png",
     nom: "Maillot Mexique",
     continent: "amerique-nord",
     taille: ["S", "M", "L", "XL"],
@@ -71,6 +76,7 @@ export const PRODUITS = [
   },
   {
     id: 6,
+    image: "usa.png",
     nom: "Maillot USA",
     continent: "amerique-nord",
     taille: ["S", "M", "L", "XL", "XXL"],
@@ -85,6 +91,7 @@ export const PRODUITS = [
   // ─── AMERIQUE DU SUD ───────────────────────────────────────
   {
     id: 7,
+    image: "bresil.png",
     nom: "Maillot Bresil",
     continent: "amerique-sud",
     taille: ["S", "M", "L", "XL", "XXL"],
@@ -97,6 +104,7 @@ export const PRODUITS = [
   },
   {
     id: 8,
+    image: "uruguay.png",
     nom: "Maillot Uruguay",
     continent: "amerique-sud",
     taille: ["S", "M", "L"],
@@ -109,6 +117,7 @@ export const PRODUITS = [
   },
   {
     id: 9,
+    image: "colombie.png",
     nom: "Maillot Colombie",
     continent: "amerique-sud",
     taille: ["XS", "S", "M", "L", "XL"],
@@ -123,6 +132,7 @@ export const PRODUITS = [
   // ─── EUROPE ────────────────────────────────────────────────
   {
     id: 10,
+    image: "france.png",
     nom: "Maillot France",
     continent: "europe",
     taille: ["S", "M", "L", "XL", "XXL"],
@@ -135,6 +145,7 @@ export const PRODUITS = [
   },
   {
     id: 11,
+    image: "portugal.png",
     nom: "Maillot Portugal",
     continent: "europe",
     taille: ["S", "M", "L", "XL"],
@@ -147,6 +158,7 @@ export const PRODUITS = [
   },
   {
     id: 12,
+    image: "angleterre.png",
     nom: "Maillot Angleterre",
     continent: "europe",
     taille: ["S", "M", "L", "XL", "XXL"],
@@ -161,6 +173,7 @@ export const PRODUITS = [
   // ─── ASIE ──────────────────────────────────────────────────
   {
     id: 13,
+    image: "qatar.png",
     nom: "Maillot Qatar",
     continent: "asie",
     taille: ["S", "M", "L"],
@@ -173,6 +186,7 @@ export const PRODUITS = [
   },
   {
     id: 14,
+    image: "japon.png",
     nom: "Maillot Japon",
     continent: "asie",
     taille: ["XS", "S", "M", "L", "XL"],
@@ -185,6 +199,7 @@ export const PRODUITS = [
   },
   {
     id: 15,
+    image: "coree-du-sud.png",
     nom: "Maillot Coree du Sud",
     continent: "asie",
     taille: ["S", "M", "L", "XL"],
@@ -199,6 +214,7 @@ export const PRODUITS = [
   // ─── OCEANIE ───────────────────────────────────────────────
   {
     id: 16,
+    image: "nouvelle-zelande.png",
     nom: "Maillot Nouvelle-Zelande",
     continent: "oceanie",
     taille: ["S", "M", "L", "XL"],
@@ -211,6 +227,7 @@ export const PRODUITS = [
   },
   {
     id: 17,
+    image: "curacao.png",
     nom: "Maillot Curacao",
     continent: "oceanie",
     taille: ["S", "M", "L"],

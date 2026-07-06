@@ -35,6 +35,10 @@ body {
 
 body {
   background-color: var(--fond);
+  background-image:
+    linear-gradient(rgba(244, 247, 242, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 247, 242, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
   color: var(--blanc-craie);
   font-family: var(--police-corps);
   line-height: 1.5;

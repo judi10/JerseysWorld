@@ -3,37 +3,18 @@
 // Chaque continent recoit une couleur d'etiquette distincte (badge)
 // utilisee sur les cartes produit, independamment du theme principal du site.
 
+// Un seul style de badge (couleur accent du site) pour tous les continents :
+// plus simple, plus coherent visuellement, et garantit un bon contraste
+// (au lieu d'un badge d'une couleur differente par continent).
+const COULEUR_BADGE_UNIQUE = "#F2C230"; // jaune carton, texte fonce dessus
+
 export const CONTINENTS = [
-  {
-    id: "afrique",
-    label: "Afrique",
-    couleurBadge: "#F2913D", // orange terre
-  },
-  {
-    id: "amerique-nord",
-    label: "Amerique du Nord",
-    couleurBadge: "#3DB6CF", // sarcelle
-  },
-  {
-    id: "amerique-sud",
-    label: "Amerique du Sud",
-    couleurBadge: "#F2C230", // or
-  },
-  {
-    id: "europe",
-    label: "Europe",
-    couleurBadge: "#5B7FDB", // bleu royal
-  },
-  {
-    id: "asie",
-    label: "Asie",
-    couleurBadge: "#B267D6", // violet
-  },
-  {
-    id: "oceanie",
-    label: "Oceanie",
-    couleurBadge: "#E85C8A", // rose corail
-  },
+  { id: "afrique", label: "Afrique", couleurBadge: COULEUR_BADGE_UNIQUE },
+  { id: "amerique-nord", label: "Amerique du Nord", couleurBadge: COULEUR_BADGE_UNIQUE },
+  { id: "amerique-sud", label: "Amerique du Sud", couleurBadge: COULEUR_BADGE_UNIQUE },
+  { id: "europe", label: "Europe", couleurBadge: COULEUR_BADGE_UNIQUE },
+  { id: "asie", label: "Asie", couleurBadge: COULEUR_BADGE_UNIQUE },
+  { id: "oceanie", label: "Oceanie", couleurBadge: COULEUR_BADGE_UNIQUE },
 ];
 
 // Fonction utilitaire pour recuperer l'objet continent a partir de son id

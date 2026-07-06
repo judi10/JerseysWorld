@@ -19,9 +19,8 @@
 }
 
 .entete-contenu {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
+  width: 100%;
+  padding: 1rem clamp(1.5rem, 4vw, 3.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,12 +125,53 @@
   margin: 0 auto;
 }
 
+.bouton-hero {
+  margin: 1.75rem auto 0;
+  align-self: center;
+}
+
+/* ─── PAGE D'ACCUEIL ───────────────────────────────────── */
+
+.section-accueil {
+  width: 100%;
+  padding: 3rem clamp(1.5rem, 4vw, 3.5rem) 4rem;
+}
+
+.section-accueil-entete {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-accueil-soustitre {
+  color: var(--texte-attenue);
+}
+
+.grille-vedette {
+  margin-bottom: 2.5rem;
+}
+
+.bouton-voir-tout {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ─── EN-TETE DU CATALOGUE ─────────────────────────────── */
+
+.entete-page-catalogue {
+  width: 100%;
+  padding: 2.5rem clamp(1.5rem, 4vw, 3.5rem) 0;
+}
+
+.entete-page-catalogue p {
+  color: var(--texte-attenue);
+  margin: 0;
+}
+
 /* ─── MISE EN PAGE BOUTIQUE ────────────────────────────── */
 
 .mise-en-page-boutique {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  width: 100%;
+  padding: 2rem clamp(1.5rem, 4vw, 3.5rem) 4rem;
   display: flex;
   gap: 2rem;
   align-items: flex-start;
@@ -251,8 +291,8 @@
 
 .grille-produits {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
 }
 
 /* ─── CARTE PRODUIT ────────────────────────────────────── */
@@ -308,6 +348,14 @@
   width: 100%;
   max-width: 140px;
   height: auto;
+}
+
+.image-maillot {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .carte-corps {
@@ -428,6 +476,22 @@
   background-color: var(--surface-claire);
   color: var(--texte-attenue);
   cursor: not-allowed;
+}
+
+.bouton-secondaire {
+  background-color: transparent;
+  color: var(--blanc-craie);
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  align-self: flex-start;
+}
+
+.bouton-secondaire:hover {
+  border-color: var(--accent-vert);
+  color: var(--accent-vert);
 }
 
 /* ─── PROCESSUS DE COMMANDE ────────────────────────────── */
@@ -702,9 +766,45 @@
     order: 3;
     width: 100%;
     justify-content: center;
+    gap: 0.25rem;
   }
 
   .formulaire-ligne {
+    flex-direction: column;
+  }
+
+  .etape-contenu {
+    padding: 1.25rem;
+  }
+
+  .etape {
+    font-size: 0.7rem;
+  }
+
+  .etape-numero {
+    width: 26px;
+    height: 26px;
+  }
+
+  .bouton-principal,
+  .bouton-secondaire {
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grille-produits {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .banniere-promo {
+    padding: 2.25rem 1rem 1.75rem;
+  }
+
+  .champs-flocage {
     flex-direction: column;
   }
 }

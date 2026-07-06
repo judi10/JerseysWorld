@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const ETAPES = ["Panier", "Informations", "Paiement", "Confirmation"];
 
-export default function CheckoutFlow({ panier, onRetirerArticle, onCommandeConfirmee, onRetourBoutique }) {
+export default function CheckoutFlow({ panier, onRetirerArticle, onCommandeConfirmee, onRetourBoutique, onContinuerAchats }) {
   const [etapeActuelle, setEtapeActuelle] = useState(0);
   const [infos, setInfos] = useState({ nom: "", adresse: "", ville: "", codePostal: "", courriel: "" });
   const [paiement, setPaiement] = useState({ numeroCarte: "", expiration: "", cvv: "" });
@@ -21,6 +21,10 @@ export default function CheckoutFlow({ panier, onRetirerArticle, onCommandeConfi
       onCommandeConfirmee();
     }
     setEtapeActuelle((e) => Math.min(e + 1, ETAPES.length - 1));
+  }
+
+  function allerEtapePrecedente() {
+    setEtapeActuelle((e) => Math.max(e - 1, 0));
   }
 
   return (
@@ -47,10 +51,10 @@ export default function CheckoutFlow({ panier, onRetirerArticle, onCommandeConfi
       {/* Etape 1 : Panier */}
       {etapeActuelle === 0 && (
         <section className="etape-contenu">
-          <h2>Votre sélection</h2>
+          <h2>Votre panier</h2>
           {panier.length === 0 ? (
             <p className="aucun-resultat">
-              Votre sélection est vide. Retournez a la boutique pour choisir un maillot.
+              Votre panier est vide. Retournez a la boutique pour choisir un maillot.
             </p>
           ) : (
             <>
@@ -83,6 +87,9 @@ export default function CheckoutFlow({ panier, onRetirerArticle, onCommandeConfi
             onClick={allerEtapeSuivante}
           >
             Passer a la livraison
+          </button>
+          <button className="bouton-secondaire" type="button" onClick={onContinuerAchats}>
+            ← Continuer mes achats
           </button>
         </section>
       )}
@@ -144,6 +151,9 @@ export default function CheckoutFlow({ panier, onRetirerArticle, onCommandeConfi
             <button className="bouton-principal" type="submit">
               Passer au paiement
             </button>
+            <button className="bouton-secondaire" type="button" onClick={allerEtapePrecedente}>
+              ← Retour au panier
+            </button>
           </form>
         </section>
       )}
@@ -193,6 +203,9 @@ export default function CheckoutFlow({ panier, onRetirerArticle, onCommandeConfi
             </div>
             <button className="bouton-principal" type="submit">
               Confirmer et payer — {sousTotal.toFixed(2)} $
+            </button>
+            <button className="bouton-secondaire" type="button" onClick={allerEtapePrecedente}>
+              ← Retour aux informations
             </button>
           </form>
         </section>

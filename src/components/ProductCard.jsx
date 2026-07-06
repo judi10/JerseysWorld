@@ -12,6 +12,8 @@ export default function ProductCard({ produit, onAjouterAuPanier }) {
   const [nomFlocage, setNomFlocage] = useState("");
   const [numeroFlocage, setNumeroFlocage] = useState("");
   const [confirmationVisible, setConfirmationVisible] = useState(false);
+  // Si l'image reelle n'existe pas encore, on retombe sur l'illustration SVG
+  const [imageIndisponible, setImageIndisponible] = useState(false);
 
   const continent = obtenirContinent(produit.continent);
   const enSolde = produit.prixOriginal !== null;
@@ -37,11 +39,20 @@ export default function ProductCard({ produit, onAjouterAuPanier }) {
       {enSolde && <span className="badge badge-solde">-{pourcentageRabais}%</span>}
 
       <div className="carte-image">
-        <MaillotIllustration
-          couleurPrimaire={produit.couleurPrimaire}
-          couleurSecondaire={produit.couleurSecondaire}
-          nom={produit.nom}
-        />
+        {produit.image && !imageIndisponible ? (
+          <img
+            src={`${import.meta.env.BASE_URL}maillots/${produit.image}`}
+            alt={produit.nom}
+            className="image-maillot"
+            onError={() => setImageIndisponible(true)}
+          />
+        ) : (
+          <MaillotIllustration
+            couleurPrimaire={produit.couleurPrimaire}
+            couleurSecondaire={produit.couleurSecondaire}
+            nom={produit.nom}
+          />
+        )}
       </div>
 
       <div className="carte-corps">
@@ -99,7 +110,7 @@ export default function ProductCard({ produit, onAjouterAuPanier }) {
         )}
 
         <button className="bouton-ajouter" onClick={gererAjout}>
-          {confirmationVisible ? "Ajoute ✓" : "Ajouter a ma selection"}
+          {confirmationVisible ? "Ajoute ✓" : "Ajouter au panier"}
         </button>
       </div>
     </div>

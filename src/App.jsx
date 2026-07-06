@@ -5,6 +5,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import HomePage from "./components/HomePage";
 import SearchPage from "./components/SearchPage";
 import CheckoutFlow from "./components/CheckoutFlow";
 import SurveyPage from "./components/SurveyPage";
@@ -12,10 +13,11 @@ import { PRODUITS } from "./data/produits";
 import "./App.css";
 
 export default function App() {
-  const [pageActuelle, setPageActuelle] = useState("boutique");
+  const [pageActuelle, setPageActuelle] = useState("accueil");
 
   // Etat centralise des filtres actifs (recherche a facettes)
   const [filtres, setFiltres] = useState({
+    promotion: [],
     continent: [],
     taille: [],
     prix: 100,
@@ -41,7 +43,7 @@ export default function App() {
   }
 
   function gererEffacerFiltres() {
-    setFiltres({ continent: [], taille: [], prix: 100 });
+    setFiltres({ promotion: [], continent: [], taille: [], prix: 100 });
   }
 
   function gererAjoutPanier(article) {
@@ -69,6 +71,14 @@ export default function App() {
         nombreArticlesPanier={panier.length}
       />
 
+      {pageActuelle === "accueil" && (
+        <HomePage
+          produits={PRODUITS}
+          onAjouterAuPanier={gererAjoutPanier}
+          onVoirCatalogue={() => setPageActuelle("boutique")}
+        />
+      )}
+
       {pageActuelle === "boutique" && (
         <SearchPage
           produits={PRODUITS}
@@ -86,6 +96,7 @@ export default function App() {
           onRetirerArticle={gererRetraitPanier}
           onCommandeConfirmee={gererCommandeConfirmee}
           onRetourBoutique={gererRetourBoutique}
+          onContinuerAchats={() => setPageActuelle("boutique")}
         />
       )}
 
