@@ -299,9 +299,9 @@
 
 .grille-produits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
   justify-content: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 /* ─── CARTE PRODUIT ────────────────────────────────────── */
@@ -796,8 +796,9 @@
   }
 }
 
-/* ─── RESPONSIVE ──── */
-
+/* ─── RESPONSIVE : paliers explicites pour la grille ──── */
+/* Grand ecran / XL : jusqu'a 5 colonnes (auto-fit gere le nombre exact) */
+/* Tablette : forcer 2 colonnes */
 @media (max-width: 900px) and (min-width: 481px) {
   .grille-produits {
     grid-template-columns: repeat(2, minmax(0, 320px));
