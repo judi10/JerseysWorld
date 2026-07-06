@@ -1,5 +1,4 @@
 node_modules
-README.md
 dist
 dist-ssr
 *.local

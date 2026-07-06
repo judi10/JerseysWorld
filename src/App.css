@@ -1,3 +1,6 @@
+**Emplacement : `jerseys-world/src/App.css`** — remplace tout le fichier par ceci :
+
+```css
 /* src/App.css
    Styles des composants de Jerseys World.
    Theme "Nuit de match" : fond sombre, accents vert pelouse / jaune. */
@@ -291,7 +294,7 @@
 
 .grille-produits {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.75rem;
 }
 
@@ -338,7 +341,8 @@
 
 .carte-image {
   background-color: var(--surface-claire);
-  padding: 1.5rem;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,10 +356,8 @@
 
 .image-maillot {
   width: 100%;
-  max-width: 220px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .carte-corps {
@@ -796,7 +798,7 @@
 
 @media (max-width: 480px) {
   .grille-produits {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1rem;
   }
 

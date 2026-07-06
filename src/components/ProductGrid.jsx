@@ -23,7 +23,12 @@ export default function ProductGrid({ produits, filtres, onAjouterAuPanier }) {
       ) : (
         <div className="grille-produits">
           {resultats.map((p) => (
-            <ProductCard key={p.id} produit={p} onAjouterAuPanier={onAjouterAuPanier} />
+            <ProductCard
+              key={p.id}
+              produit={p}
+              onAjouterAuPanier={onAjouterAuPanier}
+              taillesFiltrees={filtres.taille}
+            />
           ))}
         </div>
       )}

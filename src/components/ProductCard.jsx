@@ -2,12 +2,30 @@
 // Carte d'un maillot. Permet de choisir une taille et, en option,
 // un flocage (nom + numero) avant l'ajout a la selection.
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import MaillotIllustration from "./MaillotIllustration";
 import { obtenirContinent } from "../data/continents";
 
-export default function ProductCard({ produit, onAjouterAuPanier }) {
-  const [tailleChoisie, setTailleChoisie] = useState(produit.taille[0]);
+export default function ProductCard({ produit, onAjouterAuPanier, taillesFiltrees = [] }) {
+  // Si une ou plusieurs tailles sont filtrees, on affiche par defaut une
+  // taille qui correspond au filtre actif plutot que systematiquement
+  // la premiere taille du produit (sinon toutes les cartes semblent
+  // "figees en S" quand on filtre par une autre taille).
+  const tailleParDefaut = useMemo(() => {
+    if (taillesFiltrees.length > 0) {
+      const correspondance = produit.taille.find((t) => taillesFiltrees.includes(t));
+      if (correspondance) return correspondance;
+    }
+    return produit.taille[0];
+  }, [taillesFiltrees, produit.taille]);
+
+  const [tailleChoisie, setTailleChoisie] = useState(tailleParDefaut);
+
+  // Met a jour la taille selectionnee si le filtre actif change
+  useEffect(() => {
+    setTailleChoisie(tailleParDefaut);
+  }, [tailleParDefaut]);
+
   const [flocageActif, setFlocageActif] = useState(false);
   const [nomFlocage, setNomFlocage] = useState("");
   const [numeroFlocage, setNumeroFlocage] = useState("");
